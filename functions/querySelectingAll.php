@@ -1,5 +1,5 @@
 <?php
-    include "includes/head.php";
+    include "connection/connect.php";
 
     // Selecting the table (gender,category,sizes,item,levels,report) in order to display
     function querySelectingAll($tableName)
@@ -8,7 +8,7 @@
 
         $queryName = "SELECT * FROM $tableName";
 
-        include "queryExecute.php";
+        include_once "queryExecute.php";
         return queryExecute($queryName);
     }
 ?>

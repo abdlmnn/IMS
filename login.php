@@ -1,4 +1,6 @@
 <?php
+    $title = 'Login';
+    
     include "includes/head.php";
 ?>
 <body class="body-login">
