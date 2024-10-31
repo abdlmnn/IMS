@@ -3,7 +3,7 @@
 
     include "includes/head.php";
 ?>
-<body>
+<!-- <body>
     <h1>Gender</h1>
     <form action="genderCreate.php" method="post">
 
@@ -44,4 +44,4 @@
         ?>
     </table>
 </body>
-</html>
+</html> -->

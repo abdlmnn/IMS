@@ -5,7 +5,7 @@
 ?>
 <body>
     <h1>Categories</h1>
-    <form action="categoryCreate.php" method="post">
+    <form action="categoryProcess.php" method="post">
 
        <input type="text" name="inputName" placeholder="Enter category name" required>
 
@@ -21,25 +21,26 @@
         </tr>
         <?php
             // Displaying and Selecting all Table Rows which is category
-            include_once 'functions/querySelectingAll.php';
-            $category = querySelectingAll('category');
+            include_once 'functions/myFunction.php';
+            $categoryTable = selectAllTable('category');
         
-            foreach ($category as $categoryRows)
+            foreach ($categoryTable as $categoryRows)
             {
-        ?>      <tr>
+        ?>      
+                <tr>
                     <td><?php echo $categoryRows['categoryID']; ?></td>
                     <td><?php echo $categoryRows['categoryName']; ?></td>
                     <td>
                         <a href="categoryUpdate.php?updateID=<?php echo $categoryRows['categoryID'];?>">
                             Update
                         </a>
-                        <a href="categoryDelete.php?deleteID=<?php echo $categoryRows['categoryID'];?>">
+                        <a href="categoryProcess.php?deleteID=<?php echo $categoryRows['categoryID'];?>">
                             Delete
                         </a>
                     </td>
                 </tr>
         <?php
-            }
+            };
         ?>
     </table>
 </body>
