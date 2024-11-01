@@ -23,12 +23,8 @@
                 <input type="password" placeholder="Password"  class="input" name="inputPassword" required/>
             </div>
 
-            <div class="pass">
-                <a href="#">Forgot password?</a>
-            </div>
-
             <div class="row button">
-                <input type="submit" value="Login" class="input"/>
+                <input type="submit" value="Login" class="input">
             </div>
 
         </form>

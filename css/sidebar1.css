@@ -28,6 +28,8 @@
 
     .logo {
         font-weight: 600;
+        color: #efaf00;
+        font-size: 20px;
     }
 }
 #sidebar ul li.active a{

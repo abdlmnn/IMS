@@ -1,84 +1,82 @@
 <?php
     $title = 'Sidenav';
 
-    include 'head.php';
+    // include 'head.php';
+    
+    $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], '/')+1);
 ?>
-  
-    <div class="open-btn">
-        <ion-icon name="menu-outline" class="open-icon"></ion-icon>
-    </div>
-
-    <div class="side-bar">
-        
-        <div class="close-btn">
-            <ion-icon name="close-outline" class="close-icon"></ion-icon>
-        </div>
-
-        <div class="menu">
-
-            <div class="item">
+    <aside id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">Stuart Boutique</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <ion-icon name="chevron-forward-outline" class="open-icon"></ion-icon>
+                </button>
+            </li>
+            <li class="<?= $page == 'dashboard.php' ? 'active':'' ?>">
                 <a href="dashboard.php">
-                    <ion-icon name="tv-outline"></ion-icon>
-                    Dashboard
+                    <ion-icon name="tv-outline" class="icons"></ion-icon>
+                    <span>Dashboard</span>
                 </a>
-            </div>
-
-            <div class="item">
-                <a href="">
-                    <ion-icon name="bag-outline"></ion-icon>
-                    Order
+            </li>
+            <li class="<?= $page == 'purchase.php' ? 'active':'' ?>">
+                <a href="purchase.php">
+                    <ion-icon name="bag-outline" class="icons"></ion-icon>
+                    <span>Purchase</span>
                 </a>
-            </div>
-
-            <div class="item">
+            </li>
+            <li class="<?= $page == 'category.php' ? 'active':'' ?>">
                 <a href="category.php">
-                    <ion-icon name="shirt-outline"></ion-icon>
-                    Categories
+                    <ion-icon name="shirt-outline" class="icons"></ion-icon>
+                    <span>Categories</span>
                 </a>
-            </div>
-
-            <div class="item">
-                <a class="sub-btn">
-                    <ion-icon name="cube-outline"></ion-icon>
-                    Inventory
-                    <ion-icon name="chevron-forward-outline" class="dropdown"></ion-icon>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <ion-icon name="cube-outline" class="icons"></ion-icon>
+                    <span>Inventory</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </button>
+                <ul class="sub-menu">
+                    <div class="child-menu">
+                        <li class="<?= $page == 'sizes.php' ? 'active':'' ?>">
+                            <a href="sizes.php">Sizes</a>
+                        </li>
+                        <li class="<?= $page == 'stockitems.php' ? 'active':'' ?>">
+                            <a href="stockitems.php">Stock Items</a>
+                        </li>
+                        <li class="<?= $page == 'stocklevels.php' ? 'active':'' ?>">
+                            <a href="stocklevels.php">Stock Levels</a>
+                        </li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <ion-icon name="stats-chart-outline" class="icons"></ion-icon>
+                    <span>Report</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </button>
+                <ul class="sub-menu">
+                    <div class="child-menu">
+                        <li class="<?= $page == 'inventoryreport.php' ? 'active':'' ?>">
+                            <a href="inventoryreport.php">Inventory Reports</a>
+                        </li>
+                    </div>
+                </ul>
+            </li>
+            <li class="<?= $page == 'users.php' ? 'active':'' ?>">
+                <a href="users.php">
+                    <ion-icon name="people-outline" class="icons"></ion-icon>
+                    <span>Users</span>
                 </a>
-
-                <div class="sub-menu">
-                    <a href="">Sizes</a>
-                    <a href="stockitems.php">Stock Items</a>
-                    <a href="">Stock Levels</a>
-                </div>
-            </div>
-
-            <div class="item">
-                <a class="sub-btn">
-                    <ion-icon name="stats-chart-outline"></ion-icon>
-                    Report
-                    <ion-icon name="chevron-forward-outline" class="dropdown"></ion-icon>
+            </li>
+            <li>
+                <a href="logout.php">
+                    <ion-icon name="log-out-outline" class="icons"></ion-icon>
+                    <span>Logout</span>
                 </a>
-
-                <div class="sub-menu">
-                    <a href="">Inventory Report</a>
-                </div>
-            </div>
-
-            <div class="item">
-                <a href=""><ion-icon name="people-outline"></ion-icon>
-                    Users
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="logout.php"><ion-icon name="log-out-outline"></ion-icon>
-                    Logout
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-<?php
-    include 'foot.php';
-?>
+            </li>
+        </ul>
+    </aside>
+<?php include 'foot.php'; ?>

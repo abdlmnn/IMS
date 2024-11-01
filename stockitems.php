@@ -1,11 +1,10 @@
 <?php 
     $title = "Stock Items"; 
 
-    include 'connection/connect.php';
     include 'includes/head.php'; 
     include 'includes/sidebar.php';
 ?>
-
+<main>
     <h1>Stock Items</h1>
     <form action="stockitemsProcess.php" method="post" enctype="multipart/form-data">
 
@@ -61,5 +60,5 @@
             };
         ?>
     </table>
-
+</main>
 <?php include 'includes/foot.php'; ?>

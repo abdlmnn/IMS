@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Style -->
-    <link rel="stylesheet" href="import.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/import.css">
+
+    <!-- Login -->
+    <link rel="stylesheet" href="css/login1.css">
+    <!-- Login -->
+
+    <!-- Sidebar -->
+    <link rel="stylesheet" href="css/sidebar1.css">
+     <!-- Sidebar -->
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- Font awesome -->
 
     <title><?php echo $title; ?></title>
 </head>

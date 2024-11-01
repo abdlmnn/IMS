@@ -4,7 +4,7 @@
     include 'includes/head.php'; 
     include 'includes/sidebar.php';
 ?>
-
+<main>
     <h1>Categories</h1>
     <form action="categoryProcess.php" method="post">
 
@@ -50,5 +50,6 @@
             };
         ?>
     </table>
+</main>
 
 <?php include 'includes/foot.php' ?>

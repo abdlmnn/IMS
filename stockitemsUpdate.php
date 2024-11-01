@@ -20,8 +20,8 @@
             <input type="file" name="inputImage" accept=".jpg, .jpeg, .png">
 
             <select name="gender" id="gender">
-                <option value="<?php if ($itemsRows['gender'] == 'Men') echo 'selected'; ?>" >Men</option>
-                <option value="<?php if ($itemsRows['gender'] == 'Women') echo 'selected'; ?>" >Women</option>
+                <option value="Men<?php if ($itemsRows['gender'] == 'Men') echo 'selected'; ?>" >Men</option>
+                <option value="Women<?php if ($itemsRows['gender'] == 'Women') echo 'selected'; ?>" >Women</option>
             </select>
 
             <button type="submit" name="update-stockitems-button">UPDATE Item</button>
