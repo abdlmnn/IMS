@@ -2,6 +2,7 @@
     $title = 'Categories'; 
     
     include 'includes/head.php'; 
+    include 'includes/sidebar.php';
 ?>
 
     <h1>Categories</h1>
@@ -14,11 +15,13 @@
     </form>
 
     <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Actions</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
         <?php
             // Displaying and Selecting all Table Rows which is category
             include 'functions/queryFunction.php';
@@ -27,18 +30,22 @@
             foreach ($categoryTable as $categoryRows)
             {
         ?>      
+            <tbody>
                 <tr>
                     <td><?php echo $categoryRows['categoryID']; ?></td>
                     <td><?php echo $categoryRows['categoryName']; ?></td>
                     <td>
                         <a href="categoryUpdate.php?updateID=<?php echo $categoryRows['categoryID'];?>">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                            <!-- <i class="fa-solid fa-pen-to-square"></i> -->
+                             <span><ion-icon name="create-outline"></ion-icon></span>
                         </a>
                         <a href="categoryProcess.php?deleteID=<?php echo $categoryRows['categoryID'];?>">
-                            <i class="fa-solid fa-trash"></i>
+                            <!-- <i class="fa-solid fa-trash"></i> -->
+                             <span><ion-icon name="trash-bin-outline"></ion-icon></span>
                         </a>
                     </td>
                 </tr>
+            </tbody>
         <?php
             };
         ?>

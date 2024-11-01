@@ -1,7 +1,9 @@
 <?php 
     $title = "Stock Items"; 
 
+    include 'connection/connect.php';
     include 'includes/head.php'; 
+    include 'includes/sidebar.php';
 ?>
 
     <h1>Stock Items</h1>

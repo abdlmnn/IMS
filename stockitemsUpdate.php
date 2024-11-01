@@ -1,7 +1,9 @@
 <?php
     $title = 'Update Stock Item';
     
+    include 'connection/connect.php';
     include 'includes/head.php';
+    include 'includes/sidebar.php';
 
      // Using Function Selecting the exact ID of Stock Items that i want to update it and display the same value
     include 'stockitemsProcess.php';

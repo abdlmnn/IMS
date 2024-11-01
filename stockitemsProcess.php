@@ -1,5 +1,6 @@
 <?php
-    include 'includes/head.php';
+    // include 'includes/head.php';
+    include 'connection/connect.php';
 
         //  Adding or Inserting the inputfield to stock items tables
         if (isset($_POST['add-stockitems-button']))

@@ -102,7 +102,7 @@
             WHERE stockitemsID = '$id'
         ";
 
-        include_once 'functions/queryExecute.php';
+        include_once 'queryExecute.php';
         return queryExecute($selectStockItems);
     }
 
@@ -115,7 +115,7 @@
             WHERE stockitemsID = '$id'
         ";
 
-        include_once 'functions/queryExecute.php';
+        include_once 'queryExecute.php';
         return queryExecute($updateStockItems);
     }
 

@@ -1,5 +1,6 @@
 <?php
-    include "includes/head.php";
+    // include "includes/head.php";
+    include 'connection/connect.php';
     
     // Adding or Inserting the inputName to categoryName
     if (isset($_POST['add-category-button']))

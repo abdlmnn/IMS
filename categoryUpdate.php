@@ -1,7 +1,9 @@
 <?php 
     $title = 'Update Category'; 
 
+    include 'connection/connect.php';
     include 'includes/head.php'; 
+    include 'includes/sidebar.php';
 
     // Using Function Selecting the exact ID of category that i want to update it and display the same value
     include 'categoryProcess.php';
