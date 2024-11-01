@@ -13,7 +13,7 @@
             $target_file = $target_dir . basename($_FILES['inputImage']['name']);
             move_uploaded_file($_FILES['inputImage']['name'], $target_file);
             
-            include_once 'functions/myFunction.php';
+            include 'functions/queryFunction.php';
             insertStockItemsValues($image_path,$inputName,$gender);
 
             header('location: stockitems.php');
@@ -31,13 +31,13 @@
             // $target_file = $target_dir . basename($_FILES['inputImage']['name']);
             // move_uploaded_file($_FILES['inputImage']['name'], $target_file);
     
-            include 'functions/myFunction.php';
+            include 'functions/queryFunction.php';
             updateStockItemsSetID($image_path,$inputName,$gender,$inputID);
 
             header('location: stockitems.php');
         };
     
-        // For the updateID and deleteID statement
+        // For the updateID, deleteID and search box statement
         if (isset($_GET['updateID']))
         {
             function displayStockItems()
@@ -45,19 +45,18 @@
                 // Selecting the exact ID of Stock Items that i want to update it and display the same value
                 $updateID = $_GET['updateID'];
     
-                include 'functions/myFunction.php';
+                include 'functions/queryFunction.php';
                 return selectStockItemsID(id: $updateID);
             }
         }
-        else
+        elseif (isset($_GET['deleteID']))
         {
             // Deleting the exact Stock Items ID that i want to delete it
             $deleteID = $_GET['deleteID'];
 
-            include 'functions/myFunction.php';
+            include 'functions/queryFunction.php';
             deleteStockItemsID($deleteID);
 
             header('location: stockitems.php');
         };
-        
 ?>

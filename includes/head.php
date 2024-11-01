@@ -11,6 +11,7 @@
 
     <title><?php echo $title; ?></title>
 </head>
+<body>
 <?php
     include 'connection/connect.php';
 ?>

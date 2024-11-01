@@ -1,4 +1,9 @@
-<body>
+<?php
+    $title = 'Dashboard';
+
+    include 'includes/head.php'
+?>
     
-</body>
-</html>
+<?php
+    include 'includes/foot.php';
+?>

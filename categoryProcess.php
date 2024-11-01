@@ -6,7 +6,7 @@
     {
         $inputName = $_POST['inputName'];
 
-        include 'functions/myFunction.php';
+        include 'functions/queryFunction.php';
         insertCategoryValues($inputName);
 
         header('location: category.php');
@@ -18,7 +18,7 @@
         $inputID = $_POST['inputID'];
         $inputName= $_POST['inputName'];
 
-        include 'functions/myFunction.php';
+        include 'functions/queryFunction.php';
         updateCategorySetID($inputName,$inputID);
 
         header('location: category.php');
@@ -32,7 +32,7 @@
             // Selecting the exact ID of category that i want to update it and display the same value
             $updateID = $_GET['updateID'];
 
-            include 'functions/myFunction.php';
+            include 'functions/queryFunction.php';
             return selectCategoryID(id: $updateID);
         }
     }
@@ -41,7 +41,7 @@
         // Deleting the exact category ID that i want to delete it
         $deleteID = $_GET['deleteID'];
 
-        include 'functions/myFunction.php';
+        include 'functions/queryFunction.php';
         deleteCategoryID($deleteID);
 
         header('location: category.php');

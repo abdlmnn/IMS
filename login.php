@@ -3,7 +3,7 @@
     
     include "includes/head.php";
 ?>
-<body class="body-login">
+<div class="body-login">
 
     <div class="box-login">
 
@@ -34,6 +34,5 @@
         </form>
 
     </div>
-
-</body>
-</html>
+</div>
+<?php include 'includes/foot.php'; ?>

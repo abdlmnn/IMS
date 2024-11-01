@@ -1,17 +1,15 @@
-<?php
-    $title = 'Update Category';
+<?php 
+    $title = 'Update Category'; 
 
-    include 'includes/head.php';
+    include 'includes/head.php'; 
+
+    // Using Function Selecting the exact ID of category that i want to update it and display the same value
+    include 'categoryProcess.php';
+    $categoryTable = displayCategory();
+
+    foreach ($categoryTable as $categoryRows)
+    {
 ?>
-<body>
-    <?php
-        // Using Function Selecting the exact ID of category that i want to update it and display the same value
-        include 'categoryProcess.php';
-        $categoryTable = displayCategory();
-
-        foreach ($categoryTable as $categoryRows)
-        {
-    ?>
     <form action="categoryProcess.php" method="post">
 
         <input type="hidden" name="inputID" value="<?php echo $categoryRows['categoryID']; ?>">
@@ -20,8 +18,8 @@
         <button type="submit" name="update-category-button">UPDATE Category</button>
 
     </form>
-    <?php
-        };
-    ?>
-</body>
-</html>
+<?php
+    };
+
+    include 'includes/foot.php';
+?>

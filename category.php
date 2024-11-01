@@ -1,9 +1,9 @@
-<?php
-    $title = 'Categories';
-
-    include 'includes/head.php';
+<?php 
+    $title = 'Categories'; 
+    
+    include 'includes/head.php'; 
 ?>
-<body>
+
     <h1>Categories</h1>
     <form action="categoryProcess.php" method="post">
 
@@ -21,7 +21,7 @@
         </tr>
         <?php
             // Displaying and Selecting all Table Rows which is category
-            include_once 'functions/myFunction.php';
+            include 'functions/queryFunction.php';
             $categoryTable = selectAllTable('category');
         
             foreach ($categoryTable as $categoryRows)
@@ -32,10 +32,10 @@
                     <td><?php echo $categoryRows['categoryName']; ?></td>
                     <td>
                         <a href="categoryUpdate.php?updateID=<?php echo $categoryRows['categoryID'];?>">
-                            Update
+                            <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <a href="categoryProcess.php?deleteID=<?php echo $categoryRows['categoryID'];?>">
-                            Delete
+                            <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>
                 </tr>
@@ -43,5 +43,5 @@
             };
         ?>
     </table>
-</body>
-</html>
+
+<?php include 'includes/foot.php' ?>
