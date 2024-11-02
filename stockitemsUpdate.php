@@ -1,8 +1,7 @@
 <?php
     $title = 'Update Stock Item';
-    
-    include 'connection/connect.php';
-    include 'includes/head.php';
+
+    include 'includes/header.php';
     include 'includes/sidebar.php';
 
      // Using Function Selecting the exact ID of Stock Items that i want to update it and display the same value
@@ -12,22 +11,24 @@
     foreach ($stockitemsTable as $itemsRows) 
     {
 ?>
-        <form action="stockitemsProcess.php" method="post" enctype="multipart/form-data">
+<main>
+    <form action="stockitemsProcess.php" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="inputID" value="<?php echo $itemsRows['stockitemsID']; ?>">
-            <input type="text" name="inputName" placeholder="Enter item name" value="<?php echo $itemsRows['stockitemsName']; ?>" required>
+        <input type="hidden" name="updateID" value="<?php echo $itemsRows['stockitemsID']; ?>">
+        <input type="text" name="updateName" placeholder="Enter item name" value="<?php echo $itemsRows['stockitemsName']; ?>" required>
 
-            <input type="file" name="inputImage" accept=".jpg, .jpeg, .png">
+        <input type="file" name="updateImage" accept=".jpg, .jpeg, .png">
 
-            <select name="gender" id="gender">
-                <option value="Men<?php if ($itemsRows['gender'] == 'Men') echo 'selected'; ?>" >Men</option>
-                <option value="Women<?php if ($itemsRows['gender'] == 'Women') echo 'selected'; ?>" >Women</option>
-            </select>
+        <select name="updateGender">
+            <option value="Men" >Men</option>
+            <option value="Women" >Women</option>
+        </select>
 
-            <button type="submit" name="update-stockitems-button">UPDATE Item</button>
-        </form>
+        <button type="submit" name="update-stockitems-button">UPDATE Item</button>
+    </form>
+</main>
 <?php
     };
 
-    include 'includes/foot.php'; 
+    include 'includes/footer.php'; 
 ?>

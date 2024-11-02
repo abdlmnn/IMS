@@ -1,5 +1,5 @@
 <?php
-    include 'connection/connect.php';
+    include 'connection.php';
 
     // This is for All Table 
     // Selecting all the Table to display the value
@@ -14,6 +14,27 @@
         return queryExecute($selectTable);
     }
 ?>
+
+
+
+
+
+<!-- LOGIN FUNCTIONS QUERY -->
+<?php
+    // Selecting Username and Password on Admin Table to login
+    function selectAdminUserPass($username,$password)
+    {
+        $selectAdmin = "
+            SELECT *
+            FROM admin
+            WHERE username = '$username', password = '$password'
+        ";
+
+        include_once 'queryExecute.php';
+        return queryExecute($selectAdmin);
+    }
+?>
+<!-- LOGIN FUNCTIONS QUERY -->
 
 
 

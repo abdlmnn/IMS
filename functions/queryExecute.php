@@ -1,5 +1,5 @@
 <?php
-    include 'connection/connect.php';
+    include 'connection.php';
 
     // Execute the result queryName in a short way using function
     function queryExecute($queryName)

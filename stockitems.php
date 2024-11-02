@@ -1,7 +1,7 @@
 <?php 
     $title = "Stock Items"; 
 
-    include 'includes/head.php'; 
+    include 'includes/header.php'; 
     include 'includes/sidebar.php';
 ?>
 <main>
@@ -61,4 +61,4 @@
         ?>
     </table>
 </main>
-<?php include 'includes/foot.php'; ?>
+<?php include 'includes/footer.php'; ?>

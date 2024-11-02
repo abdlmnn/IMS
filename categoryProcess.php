@@ -1,6 +1,6 @@
 <?php
     // include "includes/head.php";
-    include 'connection/connect.php';
+    include 'connection.php';
     
     // Adding or Inserting the inputName to categoryName
     if (isset($_POST['add-category-button']))
@@ -16,11 +16,11 @@
     // Updating all the value from category table with exact ID
     if (isset($_POST['update-category-button']))
     {
-        $inputID = $_POST['inputID'];
-        $inputName= $_POST['inputName'];
+        $updateID = $_POST['updateID'];
+        $updateName = $_POST['updateName'];
 
         include 'functions/queryFunction.php';
-        updateCategorySetID($inputName,$inputID);
+        updateCategorySetID($updateName,$updateID);
 
         header('location: category.php');
     };

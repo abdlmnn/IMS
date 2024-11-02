@@ -1,17 +1,21 @@
 <?php
     $title = 'Login';
     
-    include "includes/head.php";
-?>
-<div class="body-login">
+    include "includes/header.php";
 
-    <div class="box-login">
+    session_start();
+?>
+<body>
+
+    <div class="body-login">
+
+        <div class="box-login">
 
         <div class="box-title">
             <span class="title">Stuart Boutique</span>
         </div>
 
-        <form action="" method="post" class="login-form">
+        <form action="loginProcess.php" method="post" class="login-form">
 
             <div class="row">
                 <i class="fas fa-user"></i>
@@ -24,11 +28,13 @@
             </div>
 
             <div class="row button">
-                <input type="submit" value="Login" class="input">
+                <button type="submit" name="login-button" class="input">Login</button>
             </div>
 
         </form>
 
+        </div>
+        
     </div>
-</div>
-<?php include 'includes/foot.php'; ?>
+</body>
+</html>

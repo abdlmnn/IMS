@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Login Form */
+.body-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 15px;
+    overflow: hidden;
+}
+.box-login {
+    max-width: 500px;
+    width: 100%;
+}
+.box-login .box-title {
+    height: 100px;
+    background: black;
+    border-radius: 5px 5px 0 0;
+    color: #E2A500;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/* .box-login .login-form {
+    padding: 25px 35px;
+} */
+.box-login .login-form .row {
+    height: 60px;
+    margin-top: 25px;
+    position: relative;
+}
+.box-login .login-form .row .input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 70px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+.login-form .row .input:focus {
+    border-color: black;
+}
+.login-form .row .input::placeholder {
+    color: black;
+}
+.box-login .login-form .row i {
+    position: absolute;
+    width: 55px;
+    height: 100%;
+    color: #E2A500;
+    font-size: 22px;
+    background: black;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-login .login-form .button .input {
+    color: #E2A500;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: black;
+    border: none;
+    cursor: pointer;
+}
+/* Login Form */
+
+
+.main-content {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+
+/* Side Bar */
+#sidebar {
+    height: 100vh;
+    width: 310px;
+    padding: 5px 1em;
+    background-color: #000;
+    color: #fff;
+    overflow-y: auto;
+    overflow: hidden;
+    text-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+}
+#sidebar.close {
+    padding: 5px;
+    width: 50px;
+    transition: .6s ease;
+}
+#sidebar ul {
+    list-style: none;
+}
+#sidebar > ul > li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+
+    .logo {
+        font-weight: 600;
+        color: #efaf00;
+        font-size: 25px;
+    }
+}
+#sidebar ul li.active a{
+    color: #efaf00;
+}
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo {
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 20px;
+}
+.dropdown-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+#sidebar .icons {
+    flex-shrink: 0;
+    position: relative;
+    right: 7.5px;
+    font-size: 20px;
+}
+#sidebar .open-icon {
+    font-size: 20px;
+}
+#sidebar a span, #sidebar .dropdown-btn span {
+    flex-grow: 1;
+}
+#sidebar a:hover, #sidebar .dropdown-btn:hover, #toggle-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+#sidebar .sub-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+    
+    > .child-menu {
+        overflow: hidden;
+    }
+}
+#sidebar .sub-menu.show {
+    grid-template-rows: 1fr;
+}
+.dropdown-btn ion-icon {
+    transition: 200ms ease;
+}
+.rotate ion-icon:last-child {
+    rotate: 180deg;
+}
+#sidebar .sub-menu a {
+    padding-left: 2.8em;
+}
+#toggle-btn {
+    margin-left: auto;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    color: #fff;
+
+    .icons {
+        transition: rotate 150ms ease;
+    }
+}
+/* Side Bar */
+
+
+/* Main Content */
+main {
+    /* padding: min(30px, 7%); */
+    padding: 15px;
+}
+/* Main Content */
+
+
+/* Dashboard Content */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.cards .card {
+    background: #000;
+    border-radius: 25px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    transition: transform 0.3s;
+}
+.cards .card .box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.cards .card .box .total-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #E2A500;
+}
+.cards .card .box .text-box {
+    font-size: 20px;
+    color: #ffffff;
+}
+.cards .case {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.cards .case .icon {
+    font-size: 35px;
+    color: #fff;
+}
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; 
+    overflow-y: auto; 
+    /* display: block;  */
+}
+.stock-table th, .stock-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.stock-table th {
+    background-color: #000;
+    color: #E2A500;
+    font-weight: bold;
+}
+.stock-table tr:hover {
+    background-color: #f1f1f1; 
+}
+/* Dashboard */
+
+/* /* .cat-cont form { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin-top: 20px; */
+/* } */ 
+
+/* Category */
+.cat-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    margin-bottom: 25px;
+    background-color: #000000;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px; /* Adjust width for responsiveness */
+}
+.cat-cont h1 {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #E2A500;
+}
+.cat-cont input[type="text"] {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+    border-radius: 5px;
+    outline: none;
+    width: 100%; /* Make input field full width for smaller screens */
+}
+.cat-cont button {
+    padding: 10px 20px;
+    margin-top: 25px;
+    font-size: 18px; 
+    background-color: #E2A500;
+    color: #000000;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    width: 100%; /* Make button full width for smaller screens */
+}
+
+.cat-table {
+    border-collapse: collapse;
+    width: 100%;
+    /* display: block; */
+}
+.cat-table th, .cat-table td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+.cat-table th {
+    background-color: #000;
+    color: #E2A500;
+}
+.cat-table tr:hover {
+    background-color: #f1f1f1; 
+}
+.cat-table a {
+    text-decoration: none;
+    color: #000;
+}
+.cat-table a i {
+    font-size: 25px;
+}
+.cat-table a i:hover {
+    color: #E2A500;
+}
+/* Category */
+
+
+/* Responsive */
+@media (max-width: 760px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        overflow-x: hidden;
+    }
+    main {
+        padding: 2em 1em 60px 1em;
+
+        .form-container {
+            width: 90%;
+        }
+        cat-cont form {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+    }
+    #sidebar {
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px;
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+
+        > ul {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 60px;
+            grid-auto-flow: column;
+            align-items: center;
+            overflow-x: scroll;
+        }
+
+        ul li {
+            height: 100%;
+        }
+
+        ul a, ul .dropdown-btn {
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            border-radius: 0;
+            justify-content: center;
+        }
+
+        ul li span, ul li:first-child, .dropdown-btn ion-icon:last-child  {
+            display: none;
+        }
+
+        ul li .sub-menu.show {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            box-sizing: border-box;
+            height: 60px;
+            width: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            
+            > .child-menu {
+                overflow-x: auto;
+            }
+
+            li {
+                display: inline-flex;
+            }
+
+            a {
+                box-sizing: border-box;
+                padding: 1em;
+                width: auto;
+                justify-content: center;
+            }
+        }
+    }
+
+}
+/* Responsive */

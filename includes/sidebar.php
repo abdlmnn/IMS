@@ -1,16 +1,17 @@
 <?php
     $title = 'Sidenav';
 
-    // include 'head.php';
+    // include_once 'header.php';
     
     $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], '/')+1);
 ?>
+<div class="main-content">
     <aside id="sidebar">
         <ul>
             <li>
                 <span class="logo">Stuart Boutique</span>
                 <button onclick="toggleSidebar()" id="toggle-btn">
-                    <ion-icon name="chevron-forward-outline" class="open-icon"></ion-icon>
+                    <ion-icon name="chevron-back-outline" class="open-icon"></ion-icon>
                 </button>
             </li>
             <li class="<?= $page == 'dashboard.php' ? 'active':'' ?>">
@@ -79,4 +80,3 @@
             </li>
         </ul>
     </aside>
-<?php include 'foot.php'; ?>
