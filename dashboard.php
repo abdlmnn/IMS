@@ -5,6 +5,9 @@
     include 'includes/sidebar.php';
 ?>
     <main>
+        <h1>Dashboard</h1>
+        <hr>
+        <div class="whole-dashboard-container">
         <div class="content-cont">
 
             <div class="box-cont">
@@ -113,7 +116,7 @@
 
                 <hr style="color: #000;">
 
-                <h2 class="stock-in">Stock Out</h2>
+                <h2 class="stock-out">Stock Out</h2>
                 <table class="stock-table">
                     <thead>
                         <tr>
@@ -147,6 +150,7 @@
 
             </div>
 
+        </div>
         </div>
     </main>
 <?php

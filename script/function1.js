@@ -38,3 +38,20 @@ function closeAllSubMenus()
     })
 }
 // SideBar
+
+
+// Category
+const category_form = document.getElementById('categoryForm');
+
+// Opening Form
+function showForm()
+{
+    category_form.style.display = 'block';
+}
+
+// Closing Form
+function closeForm()
+{
+    category_form.style.display = 'none';
+}
+// Category

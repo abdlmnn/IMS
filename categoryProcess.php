@@ -1,5 +1,4 @@
 <?php
-    // include "includes/head.php";
     include 'connection.php';
     
     // Adding or Inserting the inputName to categoryName
@@ -8,9 +7,9 @@
         $inputName = $_POST['inputName'];
 
         include 'functions/queryFunction.php';
-        insertCategoryValues($inputName);
+        insertCategoryValues(name: $inputName);
 
-        header('location: category.php');
+        header(header: 'location: category.php');
     };
 
     // Updating all the value from category table with exact ID
@@ -20,15 +19,15 @@
         $updateName = $_POST['updateName'];
 
         include 'functions/queryFunction.php';
-        updateCategorySetID($updateName,$updateID);
+        updateCategorySetID(name: $updateName,id: $updateID);
 
-        header('location: category.php');
+        header(header: 'location: category.php');
     };
 
     // For the updateID and DeleteID statement
     if (isset($_GET['updateID']))
     {
-        function displayCategory()
+        function displayCategory(): bool|mysqli_result
         {   
             // Selecting the exact ID of category that i want to update it and display the same value
             $updateID = $_GET['updateID'];
@@ -43,8 +42,8 @@
         $deleteID = $_GET['deleteID'];
 
         include 'functions/queryFunction.php';
-        deleteCategoryID($deleteID);
+        deleteCategoryID(id: $deleteID);
 
-        header('location: category.php');
+        header(header: 'location: category.php');
     };
 ?>

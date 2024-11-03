@@ -23,7 +23,7 @@
 }
 .box-login .box-title {
     height: 100px;
-    background: black;
+    background: #111;
     border-radius: 5px 5px 0 0;
     color: #E2A500;
     font-size: 30px;
@@ -63,7 +63,7 @@
     height: 100%;
     color: #E2A500;
     font-size: 22px;
-    background: black;
+    background: #111;
     border-radius: 5px 0 0 5px;
     display: flex;
     align-items: center;
@@ -75,7 +75,7 @@
     font-size: 20px;
     font-weight: 500;
     padding-left: 0px;
-    background: black;
+    background: #111;
     border: none;
     cursor: pointer;
 }
@@ -90,12 +90,25 @@
 }
 
 
+/* Head nav */
+.head-container {
+    background-color: #111;
+    color: #fff;
+    width: 100%;
+    /* position: sticky; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: calc(70px-6px); */
+}
+/* Head nav */
+
+
 /* Side Bar */
 #sidebar {
     height: 100vh;
     width: 310px;
     padding: 5px 1em;
-    background-color: #000;
+    background-color: #111;
     color: #fff;
     overflow-y: auto;
     overflow: hidden;
@@ -201,7 +214,7 @@
 /* Main Content */
 main {
     /* padding: min(30px, 7%); */
-    padding: 15px;
+    padding: 10px 20px;
 }
 /* Main Content */
 
@@ -209,12 +222,14 @@ main {
 /* Dashboard Content */
 .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    /* gap: 1em; */
+    margin-top: 25px;
     margin-bottom: 25px;
 }
 .cards .card {
-    background: #000;
-    border-radius: 25px;
+    background-color: #111;
+    border-radius: 10px;
     padding: 20px;
     width: calc(33.33% - 20px);
     transition: transform 0.3s;
@@ -226,7 +241,7 @@ main {
     flex-direction: column;
 }
 .cards .card .box .total-number {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color: #E2A500;
 }
@@ -235,21 +250,24 @@ main {
     color: #ffffff;
 }
 .cards .case {
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }
 .cards .case .icon {
-    font-size: 35px;
+    font-size: 30px;
     color: #fff;
 }
 
 .stock-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px; 
+    margin-bottom: 25px; 
     overflow-y: auto; 
     /* display: block;  */
+}
+.available-item, .stock-in, .stock-out {
+    margin-top: 25px;
 }
 .stock-table th, .stock-table td {
     border: 1px solid #ddd;
@@ -257,8 +275,9 @@ main {
     text-align: left;
 }
 .stock-table th {
-    background-color: #000;
+    background-color: #111;
     color: #E2A500;
+    /* color: #fff; */
     font-weight: bold;
 }
 .stock-table tr:hover {
@@ -266,56 +285,96 @@ main {
 }
 /* Dashboard */
 
+
 /* /* .cat-cont form { */
     /* display: flex; */
     /* flex-direction: column; */
     /* margin-top: 20px; */
 /* } */ 
 
+
 /* Category */
-.cat-cont {
+.whole-category-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    padding-top: 25px;
     align-items: center;
+}
+.cat-cont {
+    /* display: none; */
+    flex: 1;
+    margin-left: 60px;
 }
 .form-container {
     margin-bottom: 25px;
-    background-color: #000000;
-    color: #fff;
+    /* background-color: #111; */
     padding: 30px;
     border-radius: 8px;
-    width: 300px; /* Adjust width for responsiveness */
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .cat-cont h1 {
-    font-size: 24px; /* Adjust font size for smaller screens */
+    font-size: 24px; 
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
-    color: #E2A500;
+    /* color: #E2A500; */
+    color: #000;
+    /* color: #fff; */
 }
 .cat-cont input[type="text"] {
-    padding: 10px 20px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px 20px; 
     border-radius: 5px;
-    outline: none;
-    width: 100%; /* Make input field full width for smaller screens */
+    border: none;
+    width: 100%; 
 }
 .cat-cont button {
     padding: 10px 20px;
     margin-top: 25px;
-    font-size: 18px; 
-    background-color: #E2A500;
-    color: #000000;
+    font-size: 25px; 
+    /* background-color: #E2A500; */
+    background-color: #111;
+    /* color: #000000; */
+    color: #fff;
     border: none; 
     border-radius: 5px;
     cursor: pointer; 
-    width: 100%; /* Make button full width for smaller screens */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.table-container .add-category {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.table-container .add-category .circle-icon {
+    font-size: 40px;
+    color: #000;
+}
+.table-container .add-category .circle-icon:hover {
+    color: #E2A500;
+}
+.table-container {
+    flex: 2;
+}
+.scroll-table {
+    height: 500px;
+    overflow-y: auto; 
+}
 .cat-table {
     border-collapse: collapse;
     width: 100%;
     /* display: block; */
+}
+.cat-table th {
+    position: sticky; 
+    top: 0;
 }
 .cat-table th, .cat-table td {
     border: 1px solid #ddd;
@@ -323,8 +382,9 @@ main {
     text-align: center;
 }
 .cat-table th {
-    background-color: #000;
+    background-color: #111;
     color: #E2A500;
+    /* color: #fff; */
 }
 .cat-table tr:hover {
     background-color: #f1f1f1; 
@@ -343,24 +403,34 @@ main {
 
 
 /* Responsive */
-@media (max-width: 760px) {
+@media (max-width: 800px) {
     .main-content {
         grid-template-columns: 1fr;
         overflow-x: hidden;
     }
     main {
-        padding: 2em 1em 60px 1em;
+        /* padding: 2em 1em 60px 1em; */
 
-        .form-container {
-            width: 90%;
+        /* Dashboard */
+        .whole-dashboard-container {
+            flex-direction: row;
+            justify-content: center;
         }
-        cat-cont form {
-            margin-top: 15px;
-            display: flex;
+
+        /* Category */
+        .whole-category-container {
             flex-direction: column;
-            margin-top: 20px;
+            align-items: normal;
+        }
+        .form-container {
+            width: 100%;
+        }
+        .cat-cont {
+            margin-left: 0;
         }
     }
+    
+    
     #sidebar {
         height: 60px;
         width: 100%;
@@ -379,11 +449,9 @@ main {
             align-items: center;
             overflow-x: scroll;
         }
-
         ul li {
             height: 100%;
         }
-
         ul a, ul .dropdown-btn {
             width: 60px;
             height: 60px;
@@ -391,11 +459,9 @@ main {
             border-radius: 0;
             justify-content: center;
         }
-
         ul li span, ul li:first-child, .dropdown-btn ion-icon:last-child  {
             display: none;
         }
-
         ul li .sub-menu.show {
             position: fixed;
             bottom: 60px;
@@ -410,11 +476,9 @@ main {
             > .child-menu {
                 overflow-x: auto;
             }
-
             li {
                 display: inline-flex;
             }
-
             a {
                 box-sizing: border-box;
                 padding: 1em;
