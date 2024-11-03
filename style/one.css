@@ -90,23 +90,10 @@
 }
 
 
-/* Head nav */
-.head-container {
-    background-color: #111;
-    color: #fff;
-    width: 100%;
-    /* position: sticky; */
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: calc(70px-6px); */
-}
-/* Head nav */
-
-
 /* Side Bar */
 #sidebar {
     height: 100vh;
-    width: 310px;
+    width: 250px;
     padding: 5px 1em;
     background-color: #111;
     color: #fff;
@@ -120,7 +107,8 @@
 }
 #sidebar.close {
     padding: 5px;
-    width: 50px;
+    /* width: 50px; */
+    width: 45px;
     transition: .6s ease;
 }
 #sidebar ul {
@@ -134,7 +122,8 @@
     .logo {
         font-weight: 600;
         color: #efaf00;
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 20px;
     }
 }
 #sidebar ul li.active a{
@@ -148,7 +137,8 @@
     display: flex;
     align-items: center;
     gap: 1em;
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 15px;
 }
 .dropdown-btn {
     width: 100%;
@@ -161,11 +151,14 @@
 #sidebar .icons {
     flex-shrink: 0;
     position: relative;
-    right: 7.5px;
-    font-size: 20px;
+    /* right: 7.5px; */
+    right: 2px;
+    /* font-size: 20px; */
+    font-size: 15px;
 }
 #sidebar .open-icon {
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 15px;
 }
 #sidebar a span, #sidebar .dropdown-btn span {
     flex-grow: 1;
@@ -214,7 +207,8 @@
 /* Main Content */
 main {
     /* padding: min(30px, 7%); */
-    padding: 10px 20px;
+    padding: 20px;
+    overflow-x: hidden;
 }
 /* Main Content */
 
@@ -297,13 +291,16 @@ main {
 .whole-category-container {
     display: flex;
     flex-direction: row;
-    padding-top: 25px;
+    /* padding-top: 25px; */
+    padding: 25px 25px;
     align-items: center;
+    overflow-x: none; 
+    overflow-x: hidden;
 }
 .cat-cont {
     /* display: none; */
-    flex: 1;
-    margin-left: 60px;
+    flex: 0;
+    /* margin-left: 60px; */
 }
 .form-container {
     margin-bottom: 25px;
@@ -347,6 +344,9 @@ main {
     justify-content: center;
     align-items: center;
 }
+.cat-cont button:hover {
+    color: #E2A500;
+}
 
 .table-container .add-category {
     background-color: #fff;
@@ -364,7 +364,7 @@ main {
     flex: 2;
 }
 .scroll-table {
-    height: 500px;
+    height: 480px;
     overflow-y: auto; 
 }
 .cat-table {
@@ -403,7 +403,7 @@ main {
 
 
 /* Responsive */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .main-content {
         grid-template-columns: 1fr;
         overflow-x: hidden;
@@ -428,6 +428,9 @@ main {
         .cat-cont {
             margin-left: 0;
         }
+        /* .scroll-table {
+            height: 272px;
+        } */
     }
     
     
