@@ -11,7 +11,7 @@
         $inputPassword = $_POST['inputPassword'];
 
         include 'functions/queryFunction.php';
-        $adminTable = selectAdminUserPass(username: $inputUsername,password: $inputPassword);
+        $userTable = selectUser(username: $inputUsername,password: $inputPassword);
 
         
     };

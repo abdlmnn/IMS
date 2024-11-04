@@ -8,9 +8,9 @@
     <h1>Stock Items</h1>
     <form action="stockitemsProcess.php" method="post" enctype="multipart/form-data">
 
-        <input type="text" name="inputName" placeholder="Enter item name" required>
-
         <input type="file" name="inputImage" accept=".jpg, .jpeg, .png">
+        
+        <input type="text" name="inputName" placeholder="Enter item name" required>
 
         <select name="gender">
             <option value="Men">Men</option>
@@ -33,24 +33,24 @@
         <?php
             // Displaying and Selecting all Table Rows which is Stock Items
             include "functions/queryFunction.php";
-            $stockitemsTable = selectAllTable('stockitems');
+            $itemsTable = selectAllTable('items');
 
-            foreach ($stockitemsTable as $itemsRows) 
+            foreach ($itemsTable as $itemsRows) 
             {
         ?>
             <tbody>
                 <tr>
-                    <td style="padding: 25px"><?php echo $itemsRows['stockitemsID']; ?></td>
+                    <td style="padding: 25px"><?php echo $itemsRows['itemsID']; ?></td>
                     <td>
-                        <img src="image/<?php echo $itemsRows['stockitemsImage']; ?>" width="100" title="<?php echo $itemsRows['stockitemsImage']; ?>">
+                        <img src="image/<?php echo $itemsRows['image']; ?>" width="100" title="<?php echo $itemsRows['itemsImage']; ?>">
                     </td>
-                    <td><?php echo $itemsRows['stockitemsName']; ?></td>
+                    <td><?php echo $itemsRows['name']; ?></td>
                     <td><?php echo $itemsRows['gender']; ?></td>
                     <td>
-                        <a href="stockitemsUpdate.php?updateID=<?php echo $itemsRows['stockitemsID']; ?>">
+                        <a href="itemsUpdate.php?updateID=<?php echo $itemsRows['id']; ?>">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a href="stockitemsProcess.php?deleteID=<?php echo $itemsRows['stockitemsID']; ?>">
+                        <a href="itemsProcess.php?deleteID=<?php echo $itemsRows['id']; ?>">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>

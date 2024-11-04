@@ -21,17 +21,17 @@
 
 <!-- LOGIN FUNCTIONS QUERY -->
 <?php
-    // Selecting Username and Password on Admin Table to login
-    function selectAdminUserPass($username,$password)
+    // Selecting Username and Password on User Table to login
+    function selectUser($username,$password)
     {
-        $selectAdmin = "
+        $selectUser = "
             SELECT *
-            FROM admin
+            FROM user
             WHERE username = '$username', password = '$password'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($selectAdmin);
+        return queryExecute($selectUser);
     }
 ?>
 <!-- LOGIN FUNCTIONS QUERY -->
@@ -102,57 +102,57 @@
 <!-- STOCK ITEMS FUNCTIONS QUERY -->
 <?php
     // Inserting the values through the Stock Items Table
-    function insertStockItemsValues($image,$name,$gender)
+    function insertItemsValues($image,$name,$gender)
     {   
-        $insertStockItems = "
+        $insertItems = "
             INSERT INTO
-            stockitems (stockitemsImage,stockitemsName,gender)
+            items (itemsImage,itemsName,gender)
             VALUES ('$image','$name','$gender')
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($insertStockItems);
+        return queryExecute($insertItems);
     }
 
-    // Selecting all Stock Items Table with exact ID
-    function selectStockItemsID($id)
+    // Selecting all  Items Table with exact ID
+    function selectItemsID($id)
     {
-        $selectStockItems = "
+        $selectItems = "
             SELECT *
-            FROM stockitems
-            WHERE stockitemsID = '$id'
+            FROM items
+            WHERE itemsID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($selectStockItems);
+        return queryExecute($selectItems);
     }
 
-    // Updating the values through the Stock Items Table
-    function updateStockItemsSetID($image,$name,$gender,$id)
+    // Updating the values through the  Items Table
+    function updateItemsSetID($image,$name,$gender,$id)
     {
-        $updateStockItems = "
-            UPDATE stockitems
-            SET stockitemsImage = '$image',stockitemsName = '$name', gender = '$gender'
-            WHERE stockitemsID = '$id'
+        $updateItems = "
+            UPDATE items
+            SET itemsImage = '$image',itemsName = '$name', gender = '$gender'
+            WHERE itemsID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($updateStockItems);
+        return queryExecute($updateItems);
     }
 
-    // Deleteing the values through the Stock Items Table with exact ID
-    function deleteStockItemsID($id)
+    // Deleteing the values through the  Items Table with exact ID
+    function deleteItemsID($id)
     {
-        $deleteStockItems = "
-            DELETE FROM stockitems
-            WHERE stockitemsID = '$id'
+        $deleteItems = "
+            DELETE FROM items
+            WHERE itemsID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($deleteStockItems);
+        return queryExecute($deleteItems);
     }
 ?>
-<!-- STOCK ITEMS FUNCTIONS QUERY -->
+<!--  ITEMS FUNCTIONS QUERY -->
 
 
 
