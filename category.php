@@ -56,14 +56,14 @@
                         ?>      
                             <tbody>
                                 <tr>
-                                    <td><?php echo $categoryRows['categoryID']; ?></td>
-                                    <td><?php echo $categoryRows['categoryName']; ?></td>
+                                    <td><?php echo $categoryRows['id']; ?></td>
+                                    <td><?php echo $categoryRows['name']; ?></td>
                                     <td>
-                                        <a href="categoryUpdate.php?updateID=<?php echo $categoryRows['categoryID'];?>">
+                                        <a href="categoryUpdate.php?updateID=<?php echo $categoryRows['id'];?>">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                             <!-- <span><ion-icon name="create-outline" class="crud-icon"></ion-icon></span> -->
                                         </a>
-                                        <a href="categoryProcess.php?deleteID=<?php echo $categoryRows['categoryID'];?>">
+                                        <a href="categoryProcess.php?deleteID=<?php echo $categoryRows['id'];?>">
                                             <i class="fa-solid fa-trash"></i>
                                             <!-- <span><ion-icon name="trash-bin-outline" class="crud-icon"></ion-icon></span> -->
                                         </a>

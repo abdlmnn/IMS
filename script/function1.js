@@ -11,7 +11,6 @@ function toggleSidebar()
     closeAllSubMenus();
 }
 
-// Sub menu
 function toggleSubMenu(button)
 {
     if (!button.nextElementSibling.classList.contains('show'))
@@ -29,7 +28,6 @@ function toggleSubMenu(button)
     }
 }
 
-// Responsive closing Sub menus
 function closeAllSubMenus()
 {
     Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
@@ -43,13 +41,11 @@ function closeAllSubMenus()
 // Category
 const category_form = document.getElementById('categoryForm');
 
-// Opening Form
 function showForm()
 {
     category_form.style.display = 'block';
 }
 
-// Closing Form
 function closeForm()
 {
     category_form.style.display = 'none';

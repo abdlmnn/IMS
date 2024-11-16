@@ -14,7 +14,7 @@
         move_uploaded_file($_FILES['inputImage']['name'], $target_file);
             
         include 'functions/queryFunction.php';
-        insertStockItemsValues($image_path,$inputName,$gender);
+        insertItemsValues($image_path,$inputName,$gender);
 
         header('location: stockitems.php');
     };
@@ -33,7 +33,7 @@
         // move_uploaded_file($_FILES['updateImage']['name'], $target_file);
     
         include 'functions/queryFunction.php';
-        updateStockItemsSetID($image_path,$updateName,$updateGender,$updateID);
+        updateItemsSetID($image_path,$updateName,$updateGender,$updateID);
 
         header('location: stockitems.php');
     };
@@ -47,7 +47,7 @@
             $updateID = $_GET['updateID'];
     
             include 'functions/queryFunction.php';
-            return selectStockItemsID(id: $updateID);
+            return selectItemsID(id: $updateID);
         }
     }
     elseif (isset($_GET['deleteID']))
@@ -56,7 +56,7 @@
         $deleteID = $_GET['deleteID'];
 
         include 'functions/queryFunction.php';
-        deleteStockItemsID($deleteID);
+        deleteItemsID($deleteID);
 
         header('location: stockitems.php');
     };

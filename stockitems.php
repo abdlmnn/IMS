@@ -12,6 +12,20 @@
         
         <input type="text" name="inputName" placeholder="Enter item name" required>
 
+        <select name="category">
+            <?php
+                include_once 'functions/queryFunction.php';
+                $categoryTable = selectAllTable('category');
+
+                while($categoryRows = $categoryTable->fetch_assoc())
+                {
+            ?>
+                <option value="<?php echo $categoryRows['id']; ?>"><?php echo $categoryRows['name']; ?></option>
+            <?php
+                }
+            ?>
+        </select>
+
         <select name="gender">
             <option value="Men">Men</option>
             <option value="Women">Women</option>
@@ -32,7 +46,7 @@
         </thead>
         <?php
             // Displaying and Selecting all Table Rows which is Stock Items
-            include "functions/queryFunction.php";
+            include_once "functions/queryFunction.php";
             $itemsTable = selectAllTable('items');
 
             foreach ($itemsTable as $itemsRows) 
@@ -40,9 +54,9 @@
         ?>
             <tbody>
                 <tr>
-                    <td style="padding: 25px"><?php echo $itemsRows['itemsID']; ?></td>
+                    <td style="padding: 25px"><?php echo $itemsRows['id']; ?></td>
                     <td>
-                        <img src="image/<?php echo $itemsRows['image']; ?>" width="100" title="<?php echo $itemsRows['itemsImage']; ?>">
+                        <img src="image/<?php echo $itemsRows['image']; ?>" width="100" title="<?php echo $itemsRows['image']; ?>">
                     </td>
                     <td><?php echo $itemsRows['name']; ?></td>
                     <td><?php echo $itemsRows['gender']; ?></td>

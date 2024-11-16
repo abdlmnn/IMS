@@ -14,8 +14,8 @@
 <main>
     <form action="stockitemsProcess.php" method="post" enctype="multipart/form-data">
 
-        <input type="hidden" name="updateID" value="<?php echo $itemsRows['stockitemsID']; ?>">
-        <input type="text" name="updateName" placeholder="Enter item name" value="<?php echo $itemsRows['stockitemsName']; ?>" required>
+        <input type="hidden" name="updateID" value="<?php echo $itemsRows['id']; ?>">
+        <input type="text" name="updateName" placeholder="Enter item name" value="<?php echo $itemsRows['name']; ?>" required>
 
         <input type="file" name="updateImage" accept=".jpg, .jpeg, .png">
 

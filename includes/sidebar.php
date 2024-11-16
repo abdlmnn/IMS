@@ -1,7 +1,5 @@
 <?php
     $title = 'Sidenav';
-
-    // include_once 'header.php';
     
     $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], '/')+1);
 ?>
@@ -33,12 +31,14 @@
                 </a>
             </li>
             <li>
-                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <ion-icon name="cube-outline" class="icons"></ion-icon>
-                    <span>Inventory</span>
-                    <ion-icon name="chevron-down-outline"></ion-icon>
-                </button>
-                <ul class="sub-menu">
+                <!-- <button onclick="toggleSubMenu(this)" class="dropdown-btn"> -->
+                    <a href="inventory.php">
+                        <ion-icon name="cube-outline" class="icons"></ion-icon>
+                        <span>Inventory</span>
+                    </a>
+                    <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
+                <!-- </button> -->
+                <!-- <ul class="sub-menu">
                     <div class="child-menu">
                         <li class="<?= $page == 'sizes.php' ? 'active':'' ?>">
                             <a href="sizes.php">Sizes</a>
@@ -50,7 +50,7 @@
                             <a href="stocklevels.php">Stock Levels</a>
                         </li>
                     </div>
-                </ul>
+                </ul> -->
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
@@ -61,7 +61,7 @@
                 <ul class="sub-menu">
                     <div class="child-menu">
                         <li class="<?= $page == 'inventoryreport.php' ? 'active':'' ?>">
-                            <a href="inventoryreport.php">Inventory Reports</a>
+                            <a href="inventoryreport.php">Sales Report</a>
                         </li>
                     </div>
                 </ul>

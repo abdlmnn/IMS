@@ -16,9 +16,14 @@
     height: 100vh;
     padding: 15px;
     overflow: hidden;
+    /* background-image: url('../image/image1.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
 }
 .box-login {
-    max-width: 500px;
+    max-width: 300px;
     width: 100%;
 }
 .box-login .box-title {
@@ -26,6 +31,7 @@
     background: #111;
     border-radius: 5px 5px 0 0;
     color: #E2A500;
+    /* color: #fff; */
     font-size: 30px;
     font-weight: 600;
     display: flex;
@@ -34,7 +40,7 @@
     cursor: pointer;
 }
 /* .box-login .login-form {
-    padding: 25px 35px;
+    padding: 5px 75px;
 } */
 .box-login .login-form .row {
     height: 60px;
@@ -47,7 +53,7 @@
     outline: none;
     padding-left: 70px;
     border-radius: 5px;
-    border: 1px solid lightgrey;
+    border: 1px solid rgb(0, 0, 0);
     font-size: 20px;
     transition: all .3s ease;
 }
@@ -322,11 +328,28 @@ main {
     color: #000;
     /* color: #fff; */
 }
-.cat-cont input[type="text"] {
+.cat-cont input[type="text"], input[type="file"] {
     padding: 10px 20px; 
     border-radius: 5px;
     border: none;
     width: 100%; 
+    background-color: #ddd;
+}
+.cat-cont input[type="number"] {
+    padding: 10px 20px; 
+    border-radius: 5px;
+    /* margin: 5px; */
+    border: none;
+    width: 100%; 
+    background-color: #ddd;
+} 
+.cat-cont select{
+    padding: 10px 20px; 
+    border-radius: 5px;
+    /* margin: 5px; */
+    border: none;
+    width: 100%; 
+    background-color: #ddd;
 }
 .cat-cont button {
     padding: 10px 20px;

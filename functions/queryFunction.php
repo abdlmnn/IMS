@@ -19,22 +19,22 @@
 
 
 
-<!-- LOGIN FUNCTIONS QUERY -->
+<!-- SIGN UP FUNCTIONS QUERY -->
 <?php
     // Selecting Username and Password on User Table to login
-    function selectUser($username,$password)
+    function insertUserValues($fullname,$address,$phoneNumber,$postal,$location,$email,$password,$cPassword)
     {
-        $selectUser = "
-            SELECT *
-            FROM user
-            WHERE username = '$username', password = '$password'
+        $insertUser = "
+            INSERT INTO
+            user (fullname,address,phoneNumber,postal,location,email,password,cPassword)
+            VALUES ('$fullname','$address','$phoneNumber','$postal','$location','$email','$password','$cPassword')
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($selectUser);
+        return queryExecute($insertUser);
     }
 ?>
-<!-- LOGIN FUNCTIONS QUERY -->
+<!-- SIGN UP FUNCTIONS QUERY -->
 
 
 
@@ -47,11 +47,11 @@
     {
         $insertCategory = "
             INSERT INTO 
-            category (categoryName)
+            category (name)
             VALUES ('$name')
         ";
 
-        include_once 'queryExecute.php';
+        include_once 'functions/queryExecute.php';
         return queryExecute($insertCategory);
     }
 
@@ -61,10 +61,10 @@
         $selectCategory = "
             SELECT *
             FROM category 
-            WHERE categoryID = '$id'
+            WHERE id = '$id'
         ";
  
-        include_once 'queryExecute.php';
+        include_once 'functions/queryExecute.php';
         return queryExecute($selectCategory);
     }
 
@@ -73,11 +73,11 @@
      {
          $updateCategory = "
              UPDATE category 
-             SET categoryName = '$name'
-             WHERE categoryID = '$id'
+             SET name = '$name'
+             WHERE id = '$id'
          ";
  
-         include_once 'queryExecute.php';
+         include_once 'functions/queryExecute.php';
          return queryExecute($updateCategory);
      }
  
@@ -86,10 +86,10 @@
      {
          $deleteCategory = "
              DELETE FROM category
-             WHERE categoryID = '$id'
+             WHERE id = '$id'
          ";
  
-         include_once 'queryExecute.php';
+         include_once 'functions/queryExecute.php';
          return queryExecute($deleteCategory);
      }
  ?>
@@ -99,57 +99,59 @@
 
 
 
+
+
 <!-- STOCK ITEMS FUNCTIONS QUERY -->
 <?php
-    // Inserting the values through the Stock Items Table
-    function insertItemsValues($image,$name,$gender)
+    // Inserting the values through the Inventory Table
+    function insertItemsValues($category,$image,$name,$size,$price,$stock_quantity)
     {   
         $insertItems = "
             INSERT INTO
-            items (itemsImage,itemsName,gender)
-            VALUES ('$image','$name','$gender')
+            inventory (categoryID,image,name,size,price,stock_quantity)
+            VALUES ('$category','$image','$name','$size','$price','$stock_quantity')
         ";
 
-        include_once 'queryExecute.php';
+        include_once 'functions/queryExecute.php';
         return queryExecute($insertItems);
     }
 
-    // Selecting all  Items Table with exact ID
-    function selectItemsID($id)
+    // Selecting all Inventory Table with exact ID
+    function selectInventoryID($id)
     {
-        $selectItems = "
+        $selectInventory = "
             SELECT *
-            FROM items
-            WHERE itemsID = '$id'
+            FROM inventory
+            WHERE inventoryID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($selectItems);
+        return queryExecute($selectInventory);
     }
 
-    // Updating the values through the  Items Table
-    function updateItemsSetID($image,$name,$gender,$id)
+    // Updating the values through the Inventory Table
+    function updateInventorySetID($category,$image,$name,$size,$price,$stock_quantity,$id)
     {
-        $updateItems = "
-            UPDATE items
-            SET itemsImage = '$image',itemsName = '$name', gender = '$gender'
-            WHERE itemsID = '$id'
+        $updateInventory = "
+            UPDATE inventory
+            SET categoryID = '$category',image = '$image',name = '$name',size = '$size',price = '$price', stock_quantity = '$stock_quantity'
+            WHERE inventoryID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($updateItems);
+        return queryExecute($updateInventory);
     }
 
-    // Deleteing the values through the  Items Table with exact ID
-    function deleteItemsID($id)
+    // Deleteing the values through the Inventory Table with exact ID
+    function deleteInventoryID($id)
     {
-        $deleteItems = "
-            DELETE FROM items
-            WHERE itemsID = '$id'
+        $deleteInventory = "
+            DELETE FROM inventory
+            WHERE inventoryID = '$id'
         ";
 
         include_once 'queryExecute.php';
-        return queryExecute($deleteItems);
+        return queryExecute($deleteInventory);
     }
 ?>
 <!--  ITEMS FUNCTIONS QUERY -->
