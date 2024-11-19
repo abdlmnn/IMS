@@ -5,6 +5,7 @@
     if (isset($_POST['add-inventory-button']))
     {
         $inputName = $_POST['inputName'];
+        $inputSize = $_POST['inputSize'];
         $inputPrice = $_POST['inputPrice'];
         $inputStock = $_POST['inputStock'];
         $categoryID = $_POST['category'];

@@ -30,38 +30,25 @@
                     <span>Categories</span>
                 </a>
             </li>
-            <li>
-                <!-- <button onclick="toggleSubMenu(this)" class="dropdown-btn"> -->
-                    <a href="inventory.php">
-                        <ion-icon name="cube-outline" class="icons"></ion-icon>
-                        <span>Inventory</span>
-                    </a>
-                    <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
-                <!-- </button> -->
-                <!-- <ul class="sub-menu">
-                    <div class="child-menu">
-                        <li class="<?= $page == 'sizes.php' ? 'active':'' ?>">
-                            <a href="sizes.php">Sizes</a>
-                        </li>
-                        <li class="<?= $page == 'stockitems.php' ? 'active':'' ?>">
-                            <a href="stockitems.php">Stock Items</a>
-                        </li>
-                        <li class="<?= $page == 'stocklevels.php' ? 'active':'' ?>">
-                            <a href="stocklevels.php">Stock Levels</a>
-                        </li>
-                    </div>
-                </ul> -->
+            <li class="<?= $page == 'inventory.php' ? 'active':'' ?>">
+                <a href="inventory.php">
+                    <ion-icon name="cube-outline" class="icons"></ion-icon>
+                    <span>Inventory</span>
+                </a>
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <ion-icon name="stats-chart-outline" class="icons"></ion-icon>
-                    <span>Report</span>
+                    <span>Reports</span>
                     <ion-icon name="chevron-down-outline"></ion-icon>
                 </button>
                 <ul class="sub-menu">
                     <div class="child-menu">
-                        <li class="<?= $page == 'inventoryreport.php' ? 'active':'' ?>">
-                            <a href="inventoryreport.php">Sales Report</a>
+                        <li class="<?= $page == 'salesReport.php' ? 'active':'' ?>">
+                            <a href="salesReport.php">Sales</a>
+                        </li>
+                        <li class="<?= $page == 'inventoryReport.php' ? 'active':'' ?>">
+                            <a href="inventoryReport.php">Inventory</a>
                         </li>
                     </div>
                 </ul>

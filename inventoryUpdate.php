@@ -24,7 +24,7 @@
                     <input type="hidden" name="updateID" value="<?php echo $inventoryRows['inventoryID']; ?>">
                     <input type="file" name="updateImage" accept=".jpg, .jpeg, .png">
                         <br><br>
-                        <input type="text" name="updateName" value="<?php echo $inventoryRows['name']; ?>" placeholder="Enter name" required autofocus>
+                        <input type="text" name="updateName" value="<?php echo $inventoryRows['itemName']; ?>" placeholder="Enter name" required autofocus>
                         <br><br>
                         <input type="number" name="updatePrice" value="<?php echo $inventoryRows['price']; ?>" placeholder="Enter price" required>
                         <br><br>
@@ -46,11 +46,27 @@
                         </select>
                         <br><br>
                         <select name="updateSize">
-                            <option selected>---Size---</option>
+                        <option>---Size---</option>
+                            <option>---Clothing---</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
                             <option value="XL">XL</option>
+                            <option value="Unisex">Unisex</option>
+                            <option>---Shoes---</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option>---Socks---</option>
+                            <option value="Short">Short</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Long">Long</option>
                         </select>
 
                     <button type="submit" name="update-inventory-button">
@@ -89,7 +105,8 @@
                         <?php
                             // Displaying and Selecting all Table Rows which is category
                             include_once 'functions/queryFunction.php';
-                            $inventoryTable = selectAllTable(tableName: 'inventory');                            
+                            // $inventoryTable = selectAllTable(tableName: 'inventory');                            
+                            $inventoryTable = selectAllInnerJoin('inventory','category');
                         
                             foreach ($inventoryTable as $inventoryRows)
                             {
@@ -97,11 +114,11 @@
                             <tbody>
                                 <tr>
                                     <td><?php echo $inventoryRows['inventoryID']; ?></td>
-                                    <td><?php echo $inventoryRows['categoryID']; ?></td>
+                                    <td><?php echo $inventoryRows['name']; ?></td>
                                     <td>
                                         <img src="image/<?php echo $inventoryRows['image']; ?>" width="100" title="<?php echo $inventoryRows['image']; ?>">
                                     </td>
-                                    <td><?php echo $inventoryRows['name']; ?></td>
+                                    <td><?php echo $inventoryRows['itemName']; ?></td>
                                     <td><?php echo $inventoryRows['size']; ?></td>
                                     <td><?php echo $inventoryRows['price']; ?></td>
                                     <td><?php echo $inventoryRows['stock_quantity']; ?></td>

@@ -59,24 +59,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            include_once 'functions/queryFunction.php';
+                            $inventoryTable = selectAllTable('inventory');
+
+                            foreach ($inventoryTable as $inventoryRows) 
+                            {
+                        ?>
                         <tr>
-                            <td>Jordan 1</td>
+                            <td></td>
                             <td>42</td>
                             <td>25</td>
                             <td>Available</td>
                         </tr>
-                        <tr>
-                            <td>Menace Shirt</td>
-                            <td>Large</td>
-                            <td>10</td>
-                            <td>Available</td>
-                        </tr>
-                        <tr>
-                            <td>NBA socks</td>
-                            <td>Medium</td>
-                            <td>5</td>
-                            <td>Available</td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
 
@@ -93,58 +91,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            include_once 'functions/queryFunction.php';
+                            $inventoryTable = selectAllTable('inventory');
+
+                            foreach ($inventoryTable as $inventoryRows) 
+                            {
+                        ?>
                         <tr>
                             <td>1</td>
                             <td>Shirt</td>
                             <td>50</td>
                             <td>2024-11-01</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Shoes</td>
-                            <td>30</td>
-                            <td>2024-11-02</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Pants</td>
-                            <td>20</td>
-                            <td>2024-11-03</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <hr style="color: #000;">
-
-                <h2 class="stock-out">Stock Out</h2>
-                <table class="stock-table">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Shoes</td>
-                            <td>10</td>
-                            <td>2024-11-01</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Hoodie</td>
-                            <td>5</td>
-                            <td>2024-11-02</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Pants</td>
-                            <td>15</td>
-                            <td>2024-11-03</td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
 

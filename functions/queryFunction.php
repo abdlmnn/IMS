@@ -13,6 +13,20 @@
         include_once 'queryExecute.php';
         return queryExecute($selectTable);
     }
+
+    // Joining the category table to inventory table using the categoryID on inventory
+    function selectAllInnerJoin($tableName1,$tableName2)
+    {
+        $selectInventory = "
+            SELECT inventory.*, category.name
+            FROM $tableName1 inventory
+            INNER JOIN $tableName2 category
+            ON inventory.categoryID = category.id
+        ";        
+
+        include_once 'queryExecute.php';
+        return queryExecute($selectInventory);
+    }
 ?>
 
 
@@ -108,7 +122,7 @@
     {   
         $insertItems = "
             INSERT INTO
-            inventory (categoryID,image,name,size,price,stock_quantity)
+            inventory (categoryID,image,itemName,size,price,stock_quantity)
             VALUES ('$category','$image','$name','$size','$price','$stock_quantity')
         ";
 
@@ -134,7 +148,7 @@
     {
         $updateInventory = "
             UPDATE inventory
-            SET categoryID = '$category',image = '$image',name = '$name',size = '$size',price = '$price', stock_quantity = '$stock_quantity'
+            SET categoryID = '$category',image = '$image',itemName = '$name',size = '$size',price = '$price', stock_quantity = '$stock_quantity'
             WHERE inventoryID = '$id'
         ";
 
